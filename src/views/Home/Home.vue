@@ -32,15 +32,25 @@
         <div class="my-luckey-fish box-basic">
           <div class="title">
             My Lucky Fish
-            <div style="float: right;">0</div>
           </div>
+          <div class="title-num">
+            0
+          </div>
+          
           <img class="top-left" src="../../assets/img/small-circle.png"/>
           <img class="top-left-bind" src="../../assets/img/bind.png"/>
           <img class="top-right" src="../../assets/img/small-circle.png"/>
           <img class="top-right-bind" src="../../assets/img/bind.png"/>
 
           <div class="my-luckey-bg">
-
+            <div class="luckey-today">
+              Today‘s dividens
+              <div style="float: right;color: #3C9C07;">$0</div>
+            </div>
+            <div class="luckey-cumulative">
+              Cumulative dividens
+              <div style="float: right;color: #3C9C07;">$0</div>
+            </div>
           </div>
 
           <img class="bottom-left" src="../../assets/img/small-circle.png"/>
@@ -53,6 +63,40 @@
           <img class="top-left-bind" src="../../assets/img/bind.png"/>
           <img class="top-right" src="../../assets/img/small-circle.png"/>
           <img class="top-right-bind" src="../../assets/img/bind.png"/>
+          
+          <div class="title">
+            My Fortune Fish
+          </div>
+
+          <div class="my-fortune-bg">
+            <div class="wisdom-wrapper">
+              <img src="../../assets/img/wisdom1.png" class="wisdom-img"/>
+              <br/>
+              <span class="wisdom">wisdom</span>
+            </div>
+            <div class="wisdom-wrapper">
+              <img src="../../assets/img/wisdom2.png" class="wisdom-img"/>
+              <br/>
+              <span class="wisdom">wisdom</span>
+            </div>
+            <div class="wisdom-wrapper">
+              <img src="../../assets/img/wisdom3.png" class="wisdom-img"/>
+              <br/>
+              <span class="wisdom">wisdom</span>
+            </div>
+            <div class="wisdom-wrapper">
+              <img src="../../assets/img/wisdom4.png" class="wisdom-img"/>
+              <br/>
+              <span class="wisdom">wisdom</span>
+            </div>
+            <div class="wisdom-wrapper">
+              <img src="../../assets/img/wisdom5.png" class="wisdom-img"/>
+              <br/>
+              <span class="wisdom">wisdom</span>
+            </div>
+
+            <button type="button" class="wisdom-btn">Merge Fortune Fish</button>
+          </div>
 
         </div>
         <div class="how-to-get box-basic">
@@ -213,6 +257,52 @@ export default {
         left: 2vw
         width: 90.5vw
         height: 20vw
+        .luckey-today
+          width: 78.5vw
+          height: 2vw
+          padding: 4vw 0
+          margin: 0 auto
+          font-size: 3.4vw;
+          font-family: Arial Rounded MT Bold;
+          font-weight: 400;
+          color: #565656;
+          line-height: 2vw;
+          border-bottom: 0.5vw dashed #FDD7A0
+        .luckey-cumulative
+          width: 78.5vw
+          height: 2vw
+          padding: 4vw 0
+          margin: 0 auto
+          font-size: 3.4vw;
+          font-family: Arial Rounded MT Bold;
+          font-weight: 400;
+          color: #565656;
+          line-height: 2vw;
+      .my-fortune-bg
+        position: relative 
+        background-image: url(../../assets/img/myluckey-bg.png)
+        -moz-background-size:100% 100% 
+        background-size:100% 100%
+        bottom: -10vw
+        left: 2vw
+        width: 90.5vw
+        height: 25vw
+        .wisdom-wrapper
+          float: left
+          height: 16vw
+          padding: 3vw 2vw
+          .wisdom-img
+            height: 100%
+        .wisdom-btn
+          color: #fff
+          width: 45vw;
+          height: 8vw;
+          background: #5FCD4D;
+          box-shadow: 0px 1vw 0px 0.2vw #408B46
+          border-radius: 2vw;
+          position: absolute
+          left: 22vw
+          bottom: -10vw
       .daily-dividend
         margin: 0 0.18rem
         height: 52vw
@@ -248,6 +338,17 @@ export default {
         position: absolute
         top: 4.5vw
         left: 0.435rem
+        width: 100%
+        height: 0.23rem
+        font-size: 0.25rem
+        font-family: Arial Rounded MT Bold
+        font-weight: bold
+        color: #343434
+        line-height: 0.28rem
+      .title-num
+        position: absolute
+        top: 4.5vw
+        left: 85vw
         width: 100%
         height: 0.23rem
         font-size: 0.25rem

@@ -3,7 +3,6 @@ import { createRouter } from 'vue-router'
 import App from './App.vue'
 import fastClick from 'fastclick'
 import Home from './views/Home/Home.vue';
-import * as ElementUI from 'element-ui'
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import { createWebHistory } from 'vue-router'
@@ -25,5 +24,4 @@ const router = createRouter({
 
 const app = createApp(App)
 app.use(router)
-app.use(ElementUI)
 app.mount('#app')
