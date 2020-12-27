@@ -102,6 +102,73 @@
         <div class="how-to-get box-basic">
           <img class="how-to-get-img" src="../../assets/img/how-to-get.png"/>
           <span class="how-title">How to get lucky fish</span>
+          <div class="luckey-title">
+            Lucky Fish
+          </div>
+          <div class="how-bg">
+            <div class="how-fish">
+              <img src="../../assets/img/how-fish.png" class="how-fish-img"/>
+              <br/>
+              <span class="how-fish-lv">lv.5</span>
+            </div>
+            <div class="how-fish-add">
+              +
+            </div>
+            <div class="how-fish">
+              <img src="../../assets/img/how-fish.png" class="how-fish-img"/>
+              <br/>
+              <span class="how-fish-lv">lv.5</span>
+            </div>
+            <div class="how-fish-add">
+              =
+            </div>
+            <div class="how-fish">
+              <img src="../../assets/img/how-fish.png" class="how-fish-img"/>
+              <br/>
+              <span class="how-fish-lv">lv.5</span>
+            </div>
+
+            <div class="how-info1">
+              Mergetwo LV50.50 <br/> XXXXXxxxxxxxx  Lucky Fish
+            </div>
+          </div>
+          <div class="fortune-title">
+            Fortune Fish
+          </div>
+
+          <div class="how-fortune-bg">
+            <div class="wisdom-wrapper">
+              <img src="../../assets/img/how-fish.png" class="wisdom-img"/>
+              <br/>
+              <span class="wisdom">wisdom</span>
+            </div>
+            <div class="wisdom-wrapper">
+              <img src="../../assets/img/how-fish.png" class="wisdom-img"/>
+              <br/>
+              <span class="wisdom">wisdom</span>
+            </div>
+            <div class="wisdom-wrapper">
+              <img src="../../assets/img/how-fish.png" class="wisdom-img"/>
+              <br/>
+              <span class="wisdom">wisdom</span>
+            </div>
+            <div class="wisdom-wrapper">
+              <img src="../../assets/img/how-fish.png" class="wisdom-img"/>
+              <br/>
+              <span class="wisdom">wisdom</span>
+            </div>
+            <div class="wisdom-wrapper">
+              <img src="../../assets/img/how-fish.png" class="wisdom-img"/>
+              <br/>
+              <span class="wisdom">wisdom</span>
+            </div>
+            <div class="how-info1">
+              Mergetwo LV50.50 XXXXXxxxxxxxx<br/>  <span style="color: #E0741C">wisdomxxxxxxxxxxxxxxxx</span>
+            </div>
+            <div class="how-info2">
+              Mergetwo LV50.50 XXXXXxxxxxxxx<br/>  wisdomxxxxxxxxxxxxxxxx
+            </div>
+          </div>
         </div>
         <div class="list box-basic">
 
@@ -151,12 +218,12 @@ export default {
         font-family: Arial Rounded MT Bold;
         font-weight: 00;         
   .body-wrapper
-    height: 346vw
+    height: 371vw
     background-color: #FFC415
     .body
       border-radius: 0.25rem 0.25rem 0 0
       background: #ED7372
-      height: 346vw
+      height: 371vw
       box-shadow: 0 0.04rem 0 0 #F77F7E;
       padding-top: 5vw
       .box-basic
@@ -293,6 +360,12 @@ export default {
           padding: 3vw 2vw
           .wisdom-img
             height: 100%
+          .wisdom
+            font-size: 3.5vw;
+            font-family: Arial Rounded MT Bold;
+            font-weight: 400;
+            color: #565656;
+            line-height: 3vw;
         .wisdom-btn
           color: #fff
           width: 45vw;
@@ -315,28 +388,135 @@ export default {
       .how-to-get
         position: relative
         margin: 0.28rem 0.18rem 0 0.18rem
-        height: 100vw
+        height: 125vw
         .how-to-get-img
           left: 7vw
           width: 80vw
           position: absolute
           top: -1vw
         .how-title
-          font-size: 23px;
+          font-size: 6vw;
           font-family: Arial Rounded MT Bold;
           font-weight: 400;
           color: #FFFFFF;
           position: absolute
           top: 2vw
-          left: 18vw
+          left: 16vw
           text-align: center
           z-index: 3
+        .how-bg
+          position: relative 
+          background-image: url(../../assets/img/myluckey-bg.png)
+          -moz-background-size:100% 100% 
+          background-size:100% 100%
+          bottom: -18vw
+          left: 2vw
+          width: 90.5vw
+          height: 25vw
+          .how-fish-add
+            font-size: 11vw
+            float: left
+            height: 15vw
+            padding: 5vw 5.5vw
+            color: #E0741C
+          .how-fish
+            float: left
+            height: 12vw
+            padding: 4vw 3.5vw
+            .how-fish-img
+              height: 100%
+            .how-fish-lv
+              font-weight: bold
+              margin-left: 3vw
+              font-size: 3vw;
+              font-family: Arial Rounded MT Bold;
+              font-weight: bold
+              color: #E0741C;
+          .how-info1
+            margin: 0 auto
+            width: 87vw
+            line-height: 6vw
+            padding: 1vw 2vw 4vw 2vw;
+            top: 25vw
+            position: absolute
+            font-size: 3vw;
+            font-family: Arial Rounded MT Bold;
+            font-weight: bold
+            color: #565656;
+            border-bottom: 0.5vw dashed #FDD7A0
+        .how-fortune-bg
+          position: relative 
+          background-image: url(../../assets/img/myluckey-bg.png)
+          -moz-background-size:100% 100% 
+          background-size:100% 100%
+          bottom: -42vw
+          left: 2vw
+          width: 90.5vw
+          height: 25vw
+          .wisdom-wrapper
+            float: left
+            height: 12vw
+            padding: 3vw 3vw
+            .wisdom-img
+              height: 100%
+              margin: 0 auto
+            .wisdom
+              margin-left: -1vw
+              font-size: 3.5vw;
+              font-family: Arial Rounded MT Bold;
+              font-weight: 400;
+              color: #565656;
+              line-height: 3vw;
+          .how-info1
+            margin: 1vw auto
+            width: 87vw
+            line-height: 6vw
+            padding: 2vw 2vw 4vw 2vw;
+            top: 25vw
+            position: absolute
+            font-size: 3vw;
+            font-family: Arial Rounded MT Bold;
+            font-weight: bold
+            color: #565656;
+          .how-info2
+            margin: 1vw auto
+            width: 87vw
+            line-height: 6vw
+            padding: 1vw 2vw 4vw 2vw;
+            top: 40vw
+            position: absolute
+            font-size: 3vw;
+            font-family: Arial Rounded MT Bold;
+            font-weight: bold
+            color: #565656;
       .list
         margin: 0.28rem 0.18rem 0 0.18rem
         height: 90vw
       .title
         position: absolute
         top: 4.5vw
+        left: 0.435rem
+        width: 100%
+        height: 0.23rem
+        font-size: 0.25rem
+        font-family: Arial Rounded MT Bold
+        font-weight: bold
+        color: #343434
+        line-height: 0.28rem
+      .luckey-title
+        position: absolute
+        top: 12.5vw
+        left: 0.435rem
+        width: 100%
+        height: 0.23rem
+        font-size: 0.25rem
+        font-family: Arial Rounded MT Bold
+        font-weight: bold
+        color: #343434
+        line-height: 0.28rem
+      .fortune-title
+        position: absolute
+        top: 62vw
         left: 0.435rem
         width: 100%
         height: 0.23rem

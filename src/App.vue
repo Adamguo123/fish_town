@@ -19,6 +19,6 @@ export default defineComponent({
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 346vw;
+  height: 371vw;
 }
 </style>
