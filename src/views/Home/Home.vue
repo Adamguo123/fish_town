@@ -177,21 +177,35 @@
             </div>
           </div>
           <div class="more">
-            more>
+            more&nbsp;>
+          </div>
+          <div class="table-header">
+            <div class="header-item">
+              User ID
+            </div>
+            <div class="header-item">
+              Amount
+            </div>
+            <div class="header-item">
+              Date
+            </div>
+            <div class="header-item">
+              Share
+            </div>
           </div>
           <div class="list-wrapper">
-            <div class="table-header">
-              <div class="header-item">
-                User ID
+            <div class="table-body" v-for="item in dataList" :key="item.id">
+              <div class="body-item">
+                {{item.userId}}
               </div>
-              <div class="header-item">
-                Amound
+              <div class="body-item">
+                {{item.amount}}
               </div>
-              <div class="header-item">
-                Date
+              <div class="body-item">
+                {{item.time.split(' ')[0]}}
               </div>
-              <div class="header-item">
-                Share
+              <div class="body-item">
+                {{item.share}}
               </div>
             </div>
           </div>
@@ -219,14 +233,91 @@ export default {
           userId: "2308501*****509", 
           amount: "1", 
           time: "2020-12-01 00:00:00.000000", 
-          share: "204"
+          share: "201"
         },
         {
           id: "2", 
           userId: "2308501*****509", 
           amount: "1", 
           time: "2020-12-01 00:00:00.000000", 
+          share: "202"
+        },
+        {
+          id: "3", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
+          share: "203"
+        },
+        {
+          id: "4", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
           share: "204"
+        },
+        {
+          id: "5", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
+          share: "205"
+        },
+        {
+          id: "6", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
+          share: "206"
+        },
+        {
+          id: "7", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
+          share: "207"
+        },
+        {
+          id: "8", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
+          share: "208"
+        },
+        {
+          id: "9", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
+          share: "209"
+        },
+        {
+          id: "10", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
+          share: "210"
+        },
+        {
+          id: "11", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
+          share: "211"
+        },
+        {
+          id: "12", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
+          share: "212"
+        },
+        {
+          id: "13", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
+          share: "213"
         }
       ]
     }
@@ -603,31 +694,49 @@ export default {
             height: 1.5vw
             background: #FFA84A
             border-radius: 50%
+        .table-header
+          top: 10vw
+          position: relative
+          margin: 0 auto
+          width: 90vw
+          height: 10vw
+          background: #F9DB99
+          left: 0
+          border: 1px solid #F9DB99;
+          border-radius: 5px 5px 0 0;
+          .header-item
+            display: inline-block
+            width: 22.5vw
+            height: 10vw;
+            font-size: 3vw;
+            font-family: Arial Rounded MT Bold;
+            font-weight: Bold
+            color: #565656;
+            line-height: 10vw;
+            text-align:center
         .list-wrapper
+          order: 1px solid #F9DB99;
           margin: 0 auto
           top: 10vw
           position: relative
           width: 90vw
           height: 110vw          
           background: #FFFFFF;
-          border: 2px solid #F9DB99;
-          border-radius: 5px;
-          .table-header
+          overflow: auto
+          .table-body
             width: 90vw
             height: 10vw
-            background: #F9DB99
-            position: absolute
-            top: 0
-            left: -0.08vw
-            .header-item
+            background: #FFF
+            border: 1px solid #F9DB99;
+            .body-item
               display: inline-block
               width: 22.5vw
               height: 10vw;
-              font-size: 3vw;
+              font-size: 0.5vw;
               font-family: Arial Rounded MT Bold;
               font-weight: Bold
               color: #565656;
-              line-height: 10vw;
+              line-height: 10;
               text-align:center
         .more
           top: 4.5vw
