@@ -10,3 +10,4 @@ declare module 'element-ui/lib/locale/lang/*' {
 }
 declare module 'fastclick'
 declare module 'vue-router'
+declare module 'mint-ui'

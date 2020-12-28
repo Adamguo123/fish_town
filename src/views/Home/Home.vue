@@ -3,7 +3,7 @@
     <div class="header-wrapper">
       <div class="header">
         <img  class="back-btn" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA/UExURUdwTPr7//n6//n8//j5//b7//n6//j6//z8//r6//r7//r7//n7//j+//f///////////n7//z9//v8//j6/yQP2FkAAAAQdFJOUwCMVDnWGcf4E+eybaAiCgYd2rI6AAABY0lEQVRYw+2W25aDIAxFFSmgoi2Q///WkoDa8QZT+sjxza5sQi7HNk1VVVVSij+K4pmEEsBzACgBdD0UAVoJJYCJA5QARgklACV8pCGB+qZ5WD3jUMao75pnfLz1co4LMeix+2fzYjgRDBj/RvJ2ym5eOP6FIoKJ9eQsr3lLuPUPEZxZGLzLaF6MDxkgwbqNIXWqeRT/WmUDIuaBv4v5EsC3+B0iQCKivyTMA9XPfkRHhF3vggR+N0GHBHZ3oSRu6qCGYwY2phAQSJDsthHOXmYQCL4Mt6MgMAd7SGBtCBLGxDCut/CxvZeMc71WkifWgdvtXNrGeWLt0G/bAYmJfOptFz7WucPcwjjotCUs2/jHD1Qraa5Td6CGRj/YGcpDUAZyzrFFOuzgSJr2iuUYszj3xBF3Rme7y4krI0Fk+9uZrbeQUcVlQ0+/C+J+mjM+HL0s/N/ASgGNKAVMTVVVVdXv9QZ5USpB3dZraQAAAABJRU5ErkJggg==">
-        <button type="button" class="rules-btn">RULES</button>
+        <button type="button" class="rules-btn" @click="showDialog">RULES</button>
       </div>
     </div>
 
@@ -171,8 +171,37 @@
           </div>
         </div>
         <div class="list box-basic">
-
+          <div class="list-title">
+            <div class="dot1">
+              </div> Lucky Fish<div class="dot2">
+            </div>
+          </div>
+          <div class="more">
+            more>
+          </div>
+          <div class="list-wrapper">
+            <div class="table-header">
+              <div class="header-item">
+                User ID
+              </div>
+              <div class="header-item">
+                Amound
+              </div>
+              <div class="header-item">
+                Date
+              </div>
+              <div class="header-item">
+                Share
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <div v-show="dialog" class='popContainer'>
+      <div class="img">
+        <img class="close-img" src="../../assets/img/close.png" alt="" @click="hideDialog">
       </div>
     </div>
   </div>
@@ -180,11 +209,68 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  data () {
+    return {
+      dialog: false,
+      dataList: [
+        {
+          id: "1", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
+          share: "204"
+        },
+        {
+          id: "2", 
+          userId: "2308501*****509", 
+          amount: "1", 
+          time: "2020-12-01 00:00:00.000000", 
+          share: "204"
+        }
+      ]
+    }
+  },
+  methods: {
+    showDialog() {
+      this.dialog = true
+    },
+    hideDialog() {
+      this.dialog = false
+    },
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
+  .popContainer
+    z-index: 10
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    .img
+      z-index: 11
+      position: relative
+      background-image: url(../../assets/img/rule.png)
+      background-repeat: no-repeat
+      -moz-background-size:100% 100% 
+      background-size: 100%
+      margin: 0 auto
+      width: 100%;
+      height: 100%;
+      object-fit: contain
+      .close-img
+        z-index: 11
+        cursor: pointer
+        display: inline-block
+        margin-left: 90vw
+        margin-top: 22vw
+        width: 7vw
+        height: 7vw;
+        object-fit: contain
   .header-wrapper
     height: 29vw
     background-color: #CF703A
@@ -200,15 +286,15 @@ export default {
       opacity: 0.9
       .back-btn
         position: absolute
-        left: 0.19rem
-        top: 0.05rem
-        width: 0.62rem
+        left: 2.4vw
+        top: 1vw
+        width: 8vw
       .rules-btn
         position: absolute
-        top: 0.18rem
+        top: 2.9vw
         right: 0
-        width: 1.2rem
-        height: 0.4rem
+        width: 15vw
+        height: 5vw
         background: rgba(174, 95, 46, 1);
         border: 0.03rem solid #F6A264;
         border-radius: 0.14rem 0rem 0rem 0.14rem;
@@ -218,12 +304,12 @@ export default {
         font-family: Arial Rounded MT Bold;
         font-weight: 00;         
   .body-wrapper
-    height: 371vw
+    height: 405vw
     background-color: #FFC415
     .body
       border-radius: 0.25rem 0.25rem 0 0
       background: #ED7372
-      height: 371vw
+      height: 405vw
       box-shadow: 0 0.04rem 0 0 #F77F7E;
       padding-top: 5vw
       .box-basic
@@ -491,7 +577,66 @@ export default {
             color: #565656;
       .list
         margin: 0.28rem 0.18rem 0 0.18rem
-        height: 90vw
+        height: 123vw
+        .list-title
+          position: absolute
+          top: 4.5vw
+          left: 35vw
+          width: 100%
+          font-size: 2vw
+          font-family: Arial Rounded MT Bold
+          font-weight: bold
+          color: #343434
+          line-height: 4vw
+          .dot1
+            margin-bottom: 0.3vw
+            display: inline-block
+            width: 1.5vw
+            height: 1.5vw
+            background: #FFA84A
+            border-radius: 50%
+          .dot2
+            margin-bottom: 0.3vw
+            margin-left: 1vw
+            display: inline-block
+            width: 1.5vw
+            height: 1.5vw
+            background: #FFA84A
+            border-radius: 50%
+        .list-wrapper
+          margin: 0 auto
+          top: 10vw
+          position: relative
+          width: 90vw
+          height: 110vw          
+          background: #FFFFFF;
+          border: 2px solid #F9DB99;
+          border-radius: 5px;
+          .table-header
+            width: 90vw
+            height: 10vw
+            background: #F9DB99
+            position: absolute
+            top: 0
+            left: -0.08vw
+            .header-item
+              display: inline-block
+              width: 22.5vw
+              height: 10vw;
+              font-size: 3vw;
+              font-family: Arial Rounded MT Bold;
+              font-weight: Bold
+              color: #565656;
+              line-height: 10vw;
+              text-align:center
+        .more
+          top: 4.5vw
+          right: 2.5vw
+          position: absolute
+          font-size: 1vw;
+          font-family: Arial Rounded MT Bold;
+          font-weight: bold
+          color: #E37137;
       .title
         position: absolute
         top: 4.5vw

@@ -8,9 +8,9 @@ import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import { createWebHistory } from 'vue-router'
 
-// axios.get('https://www.play1717.com/metrix/fish_town?p=bonus&s=0&r=2').then(res => {
-//   console.log(res)
-// })
+axios.get('/api/metrix/fish_town?p=bonus&s=0&r=2').then(res => {
+  console.log(res)
+})
 
 //解决移动端点击延迟 300ms 的问题
 fastClick.attach(document.body)
