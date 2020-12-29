@@ -194,7 +194,15 @@
             </div>
           </div>
           <div class="list-wrapper">
-            <div class="table-body" v-for="item in dataList" :key="item.id">
+            <div 
+              :id="'ID'+(index+1).toString()"
+              class="table-body" 
+              v-for="(item, index) in dataList" 
+              :key="item.id"
+              @touchstart="handleTouchStart"
+              @touchmove="handleTouchMove"
+              @touchEnd="handleTouchEnd"
+            >
               <div class="body-item">
                 {{item.userId}}
               </div>
@@ -226,6 +234,9 @@ export default {
   name: 'Home',
   data () {
     return {
+      startY: 0,
+      timer: null,
+      touchStatus: false,
       dialog: false,
       dataList: [
         {
@@ -323,6 +334,34 @@ export default {
     }
   },
   methods: {
+    handleTouchEnd () {
+      this.touchStatus = false
+    },
+    handleTouchMove (e) {
+      console.log(e)
+      if (this.touchStatus) {
+        const startY = document.getElementById('ID1').offsetTop
+        const touchY = e.touches[0].clientY
+        console.log(startY)
+        console.log(touchY)
+        // if (this.timer) {
+        //   clearTimeout(this.timer)
+        // }
+        // this.timer = setTimeout(() => {
+        //   const touchY = e.touches[0].clientY - 79
+        //   const index = Math.floor((touchY - this.startY) / 20)
+        //   if (index >= 0 && index < this.letters.length) {
+        //     this.$emit('change', this.letters[index])
+        //   }
+        // }, 16)
+      }
+    },
+    handleTouchStart () {
+      this.touchStatus = true
+    },
+    doLoadMore() {
+      console.log('LoadMore')
+    },
     showDialog() {
       this.dialog = true
     },
@@ -668,7 +707,7 @@ export default {
             color: #565656;
       .list
         margin: 0.28rem 0.18rem 0 0.18rem
-        height: 123vw
+        height: 127vw
         .list-title
           position: absolute
           top: 4.5vw
@@ -703,7 +742,7 @@ export default {
           background: #F9DB99
           left: 0
           border: 1px solid #F9DB99;
-          border-radius: 5px 5px 0 0;
+          border-radius: 2vw 2vw 0 0;
           .header-item
             display: inline-block
             width: 22.5vw
@@ -715,12 +754,12 @@ export default {
             line-height: 10vw;
             text-align:center
         .list-wrapper
-          order: 1px solid #F9DB99;
+          border: 1px solid #F9DB99;
           margin: 0 auto
           top: 10vw
           position: relative
           width: 90vw
-          height: 110vw          
+          height: 105.3vw          
           background: #FFFFFF;
           overflow: auto
           .table-body
@@ -736,7 +775,7 @@ export default {
               font-family: Arial Rounded MT Bold;
               font-weight: Bold
               color: #565656;
-              line-height: 10;
+              line-height: 10vw;
               text-align:center
         .more
           top: 4.5vw
