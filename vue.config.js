@@ -1,7 +1,10 @@
 module.exports = {
+  publicPath: './',
+  outputDir: "dist",
+  assetsDir: "static",
   devServer: {
-    // host: '192.168.1.32',        //设置本地服务器   选填
-    host: '192.168.3.8',
+    host: 'localhost',        //设置本地服务器   选填
+    // host: '192.168.3.8',
     port: 8080,              //设置本地默认端口  选填
     proxy: {                 //设置代理，必须填
       '/api': {              //设置拦截器  拦截器格式   斜杠+拦截器名字，名字可以自己定

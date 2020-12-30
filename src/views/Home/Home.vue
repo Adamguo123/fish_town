@@ -246,8 +246,15 @@ export default {
     }
   },
   mounted() {
+    let url = ''
+    if(process.env.VUE_APP_CURENV === 'development') {
+      url = '/api/metrix/fish_town?p=bonus&s=0&r=20'
+    }
+    if(process.env.VUE_APP_CURENV === 'production') {
+      url = 'https://www.play1717.com/api/metrix/fish_town?p=bonus&s=0&r=20'
+    }
     this.loading = true
-    axios.get('/api/metrix/fish_town?p=bonus&s=0&r=20')
+    axios.get(url)
       .then(res => {
         res.data.forEach((item, index) => {
           this.dataList.push({})
@@ -266,7 +273,7 @@ export default {
   methods: {
     getList() {
       this.loading = true
-      console.log(this.dataList.length)
+
       setTimeout(() =>{
         let length = this.dataList.length
         if(length > 10){
@@ -296,18 +303,17 @@ export default {
       }, 1000)
     },
     handleTouchEnd (e) {
-      // console.log(e)
+
       this.touchStatus = false
       let diff = e.changedTouches[0].pageY - this.startY
       const startY = document.getElementById('ID2')?document.getElementById('ID2').scrollTop:''
 
-      console.log(startY)
       if(diff < 0  && this.dataList.length){
         this.getList()
       }
     },
     handleTouchMove (e) {
-      console.log(e)
+
       if (this.touchStatus) {
         const startY = document.getElementById('ID1').offsetTop
         const touchY = e.touches[0].clientY
