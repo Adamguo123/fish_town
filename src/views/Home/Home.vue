@@ -232,6 +232,7 @@
 
 <script>
 import axios from 'axios'
+import { jsonp } from 'vue-jsonp'
 export default {
   name: 'Home',
   data () {
@@ -246,34 +247,78 @@ export default {
     }
   },
   mounted() {
-    let url = ''
-    if(process.env.VUE_APP_CURENV === 'development') {
-      url = '/api/metrix/fish_town?p=bonus&s=0&r=20'
-    }
-    if(process.env.VUE_APP_CURENV === 'production') {
-      url = 'https://www.play1717.com/api/metrix/fish_town?p=bonus&s=0&r=20'
-    }
-    this.loading = true
-    axios.get(url)
-      .then(res => {
-        res.data.forEach((item, index) => {
-          this.dataList.push({})
-          this.dataList[index].amount = item.amount
-          this.dataList[index].id = item.id
-          this.dataList[index].share = item.share
-          this.dataList[index].time = item.time
-          this.dataList[index].userId = item.user_id
-        })
-        this.getList()
-      })
-      .catch(err => {
-        alert('获取数据时发生了错误')
-      })
+    this.getJson()
+    
+      // .then(res => {
+      //   console.log(res)
+      //   // res.data.forEach((item, index) => {
+      //   //   this.dataList.push({})
+      //   //   this.dataList[index].amount = item.amount
+      //   //   this.dataList[index].id = item.id
+      //   //   this.dataList[index].share = item.share
+      //   //   this.dataList[index].time = item.time
+      //   //   this.dataList[index].userId = item.user_id
+      //   // })
+      //   // this.getList()
+      // })
+      // .catch(err => {
+      //   console.log(err)
+      //   alert('获取数据时发生了错误')
+      // })
+    // let url = ''
+    // let param = {
+    //   header: {
+    //     "content-type": "application/xml"
+    //   }
+    // }
+    // if(process.env.VUE_APP_CURENV === 'development') {
+    //   url = '/api/metrix/fish_town?p=bonus&s=0&r=20'
+    // }
+    // if(process.env.VUE_APP_CURENV === 'production') {
+    //   url = 'https://www.play1717.com/api/metrix/fish_town?p=bonus&s=0&r=20'
+    // }
+    // this.loading = true
+    // this.$jsonp(url)
+    // // axios.get(url)
+    //   .then(res => {
+    //     res.data.forEach((item, index) => {
+    //       this.dataList.push({})
+    //       this.dataList[index].amount = item.amount
+    //       this.dataList[index].id = item.id
+    //       this.dataList[index].share = item.share
+    //       this.dataList[index].time = item.time
+    //       this.dataList[index].userId = item.user_id
+    //     })
+    //     this.getList()
+    //   })
+    //   .catch(err => {
+    //     alert('获取数据时发生了错误')
+    //   })
   },
   methods: {
+    onBack() {
+      console.log(222)
+    },
+    getJson() {
+      let script = document.createElement('script');
+      script.type = 'text/javascript';
+  
+      // 传参并指定回调执行函数为onBack
+      let onback = 'onback'
+      script.src = `https://www.play1717.com/metrix/fish_town?p=bonus&s=0&r=2&callback=onback`;
+      document.head.appendChild(script);
+  
+      // 回调执行函数
+      // jsonp('https://www.play1717.com/metrix/fish_town', {
+      //   callbackQuery: 'cb',
+      //   callbackName: 'jsonpfunc',
+      //   p: 'bonus',
+      //   s: 0,
+      //   r: 20
+      // })
+    },
     getList() {
       this.loading = true
-
       setTimeout(() =>{
         let length = this.dataList.length
         if(length > 10){
