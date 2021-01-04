@@ -14,7 +14,7 @@
             Daily Dividend
           </div>
           <div class="daily-bg">
-            <img class="daily" src="../../assets/img/daily.jpg"/>
+            <img class="daily" src="../../assets/img/daily.png"/>
             <span class="daily-info1">Yesterday's dividend<br/>Per Lucky Fish</span>
             <span class="daily-money">$289.19</span>
             <span class="daily-info2">Accumulated<br/>dividends</span>
@@ -72,27 +72,27 @@
             <div class="wisdom-wrapper">
               <img src="../../assets/img/wisdom1.png" class="wisdom-img"/>
               <br/>
-              <span class="wisdom">wisdom</span>
+              <span class="wisdom">Agility</span>
             </div>
             <div class="wisdom-wrapper">
               <img src="../../assets/img/wisdom2.png" class="wisdom-img"/>
               <br/>
-              <span class="wisdom">wisdom</span>
+              <span class="wisdom">Talent</span>
             </div>
             <div class="wisdom-wrapper">
               <img src="../../assets/img/wisdom3.png" class="wisdom-img"/>
               <br/>
-              <span class="wisdom">wisdom</span>
+              <span class="wisdom">Strength</span>
             </div>
             <div class="wisdom-wrapper">
               <img src="../../assets/img/wisdom4.png" class="wisdom-img"/>
               <br/>
-              <span class="wisdom">wisdom</span>
+              <span class="wisdom">Wisdom</span>
             </div>
             <div class="wisdom-wrapper">
               <img src="../../assets/img/wisdom5.png" class="wisdom-img"/>
               <br/>
-              <span class="wisdom">wisdom</span>
+              <span class="wisdom">Diligence</span>
             </div>
 
             <button type="button" class="wisdom-btn">Merge Fortune Fish</button>
@@ -109,7 +109,7 @@
             <div class="how-fish">
               <img src="../../assets/img/how-fish.png" class="how-fish-img"/>
               <br/>
-              <span class="how-fish-lv">lv.5</span>
+              <span class="how-fish-lv">lv.50</span>
             </div>
             <div class="how-fish-add">
               +
@@ -117,19 +117,19 @@
             <div class="how-fish">
               <img src="../../assets/img/how-fish.png" class="how-fish-img"/>
               <br/>
-              <span class="how-fish-lv">lv.5</span>
+              <span class="how-fish-lv">lv.50</span>
             </div>
             <div class="how-fish-add">
               =
             </div>
-            <div class="how-fish">
-              <img src="../../assets/img/how-fish.png" class="how-fish-img"/>
+            <div class="how-fish2">
+              <img src="../../assets/img/daily2.png" class="how-fish-img2"/>
               <br/>
-              <span class="how-fish-lv">lv.5</span>
+              <span class="how-fish-lv2">Lucky Fish</span>
             </div>
 
-            <div class="how-info1">
-              Mergetwo LV50.50 <br/> XXXXXxxxxxxxx  Lucky Fish
+            <div class="how-info1" style="letter-spacing: 0.3vw">
+              Merge two LV50 fish has possibility to get a <br/> <span style="color: #E0741C">Lucky Fish</span>
             </div>
           </div>
           <div class="fortune-title">
@@ -137,36 +137,36 @@
           </div>
 
           <div class="how-fortune-bg">
-            <div class="wisdom-wrapper">
-              <img src="../../assets/img/how-fish.png" class="wisdom-img"/>
+            <div class="wisdom-wrapper1">
+              <img src="../../assets/img/Brisk.png" class="wisdom-img"/>
               <br/>
-              <span class="wisdom">wisdom</span>
+              <span class="wisdom">Agility</span>
             </div>
-            <div class="wisdom-wrapper">
-              <img src="../../assets/img/how-fish.png" class="wisdom-img"/>
+            <div class="wisdom-wrapper1">
+              <img src="../../assets/img/Talent.png" class="wisdom-img"/>
               <br/>
-              <span class="wisdom">wisdom</span>
+              <span class="wisdom">Talent</span>
             </div>
-            <div class="wisdom-wrapper">
-              <img src="../../assets/img/how-fish.png" class="wisdom-img"/>
+            <div class="wisdom-wrapper1">
+              <img src="../../assets/img/Strength.png" class="wisdom-img"/>
               <br/>
-              <span class="wisdom">wisdom</span>
+              <span class="wisdom">Strength</span>
             </div>
-            <div class="wisdom-wrapper">
-              <img src="../../assets/img/how-fish.png" class="wisdom-img"/>
+            <div class="wisdom-wrapper1">
+              <img src="../../assets/img/Erudite.png" class="wisdom-img"/>
               <br/>
-              <span class="wisdom">wisdom</span>
+              <span class="wisdom">Wisdom</span>
             </div>
-            <div class="wisdom-wrapper">
-              <img src="../../assets/img/how-fish.png" class="wisdom-img"/>
+            <div class="wisdom-wrapper1">
+              <img src="../../assets/img/Diligent.png" class="wisdom-img"/>
               <br/>
-              <span class="wisdom">wisdom</span>
+              <span class="wisdom">Diligence</span>
             </div>
-            <div class="how-info1">
-              Mergetwo LV50.50 XXXXXxxxxxxxx<br/>  <span style="color: #E0741C">wisdomxxxxxxxxxxxxxxxx</span>
+            <div class="how-info1" style="letter-spacing: 0.3vw">
+              Merge two LV50 fish has possibility to get<br/>  <span style="color: #E0741C">Agility,Talent,Strength,Wisdom,Diligence</span>
             </div>
-            <div class="how-info2">
-              Mergetwo LV50.50 XXXXXxxxxxxxx<br/>  wisdomxxxxxxxxxxxxxxxx
+            <div class="how-info2" style="letter-spacing: 0.3vw">
+              Collect all 5 fortune fish,must get a lucky fish
             </div>
           </div>
         </div>
@@ -339,6 +339,7 @@ export default {
     bottom: 0;
     background: rgba(0,0,0,0.3);
     .img
+      margin: 0 auto
       z-index: 11
       position: relative
       background-image: url(../../assets/img/rule.png)
@@ -346,25 +347,25 @@ export default {
       -moz-background-size:100% 100% 
       background-size: 100%
       margin: 0 auto
-      width: 100%;
+      width: 90%;
       height: 100%;
       object-fit: contain
       .close-img
         z-index: 11
         cursor: pointer
         display: inline-block
-        margin-left: 90vw
-        margin-top: 22vw
-        width: 7vw
-        height: 7vw;
+        margin-left: 81vw
+        margin-top: 19.5vw
+        width: 6.5vw
+        height: 6.5vw;
         object-fit: contain
   .header-wrapper
-    height: 29vw
+    height: 39vw
     background-color: #CF703A
     z-index: 0
     .header
       position: relative
-      height: 29vw
+      height: 39vw
       width: 100%
       background-image: url(../../assets/img/header.png)
       -moz-background-size:100% 100% 
@@ -374,14 +375,14 @@ export default {
       .back-btn
         position: absolute
         left: 2.4vw
-        top: 1vw
+        top: 3vw
         width: 8vw
       .rules-btn
         position: absolute
-        top: 2.9vw
+        top: 3.9vw
         right: -1vw
         width: 16vw
-        height: 5vw
+        height: 6vw
         background: rgba(174, 95, 46, 1);
         border: 0.5vw solid #F6A264;
         border-radius: 2vw 0rem 0rem 2vw;
@@ -417,7 +418,7 @@ export default {
         height: 71vw
         .daily
           position: absolute
-          width: 22vw
+          width: 17vw
           top: 23vw
           left: 8vw
         .daily-info1
@@ -535,6 +536,7 @@ export default {
           .wisdom-img
             height: 100%
           .wisdom
+            margin-left: -1vw
             font-size: 3.5vw;
             font-family: Arial Rounded MT Bold;
             font-weight: Bold;
@@ -596,10 +598,10 @@ export default {
             color: #E0741C
           .how-fish
             float: left
-            height: 12vw
-            padding: 4vw 3.5vw
+            width: 15vw
+            padding: 4vw 1vw
             .how-fish-img
-              height: 100%
+              width: 100%
             .how-fish-lv
               font-weight: bold
               margin-left: 3vw
@@ -607,10 +609,23 @@ export default {
               font-family: Arial Rounded MT Bold;
               font-weight: bold
               color: #E0741C;
+          .how-fish2
+            float: left
+            width: 18.5vw
+            padding: 3vw 1vw
+            .how-fish-img2
+              width: 11.5vw
+            .how-fish-lv2
+              font-weight: bold
+              margin-left: -3vw
+              font-size: 3vw;
+              font-family: Arial Rounded MT Bold;
+              font-weight: bold
+              color: #E0741C;
           .how-info1
             margin: 0 auto
             width: 87vw
-            line-height: 6vw
+            line-height: 5vw
             padding: 1vw 2vw 4vw 2vw;
             top: 25vw
             position: absolute
@@ -628,25 +643,23 @@ export default {
           left: 2vw
           width: 90.5vw
           height: 25vw
-          .wisdom-wrapper
-            width: 14vw
+          .wisdom-wrapper1
+            text-align: center
             float: left
-            height: 12vw
-            padding: 3vw 2vw
+            height: 14vw
+            padding: 4.5vw 2vw
             .wisdom-img
               height: 100%
-              margin: 0 auto
             .wisdom
-              margin-left: -1vw
-              font-size: 3.5vw;
+              font-size: 2.5vw;
               font-family: Arial Rounded MT Bold;
               font-weight: Bold;
               color: #565656;
-              line-height: 3vw;
+              line-height: 2.5vw;
           .how-info1
             margin: 1vw auto
             width: 87vw
-            line-height: 6vw
+            line-height: 5vw
             padding: 2vw 2vw 4vw 2vw;
             top: 25vw
             position: absolute
@@ -657,7 +670,7 @@ export default {
           .how-info2
             margin: 1vw auto
             width: 87vw
-            line-height: 6vw
+            line-height: 5vw
             padding: 1vw 2vw 4vw 2vw;
             top: 40vw
             position: absolute
