@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import { createRouter } from 'vue-router'
-import { VueJsonp } from 'vue-jsonp'
 
 import App from './App.vue'
 import fastClick from 'fastclick'
