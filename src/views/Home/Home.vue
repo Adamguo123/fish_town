@@ -178,16 +178,16 @@
             more&nbsp;>
           </div>
           <div class="table-header">
-            <div class="header-item">
+            <div class="header-item" style="width: 30.5vw">
               User ID
             </div>
-            <div class="header-item">
+            <div class="header-item" style="width: 14.5vw">
               Amount
             </div>
-            <div class="header-item">
+            <div class="header-item" style="width: 30.5vw">
               Date
             </div>
-            <div class="header-item">
+            <div class="header-item" style="width: 14.5vw">
               Share
             </div>
           </div>
@@ -198,19 +198,18 @@
               v-for="(item, index) in list" 
               :key="item.id"
               @touchstart="handleTouchStart"
-              @touchmove="handleTouchMove"
               @touchEnd="handleTouchEnd"
             >
-              <div class="body-item">
+              <div class="body-item" style="width: 30.5vw">
                 {{item.userId}}
               </div>
-              <div class="body-item">
+              <div class="body-item" style="width: 14.5vw">
                 {{item.amount}}
               </div>
-              <div class="body-item">
+              <div class="body-item" style="width: 30.5vw">
                 {{item.time?item.time.split(' ')[0]:''}}
               </div>
-              <div class="body-item">
+              <div class="body-item" style="width: 14.5vw">
                 {{item.share}}
               </div>
             </div>
@@ -231,8 +230,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-import { jsonp } from 'vue-jsonp'
 export default {
   name: 'Home',
   data () {
@@ -252,7 +249,6 @@ export default {
   methods: {
     getJson() {
       this.loading = true
-
       let data = JSON.parse(localStorage.getItem("data"))
       data.forEach((item, index) => {
         this.dataList.push({})
@@ -287,7 +283,7 @@ export default {
           this.dataList = []
           this.loading = false
         } else {
-          this.dataList.forEach((item, index) => {
+          this.dataList.forEach(item => {
             this.list.push(item)
           })
           this.dataList = []
@@ -296,20 +292,10 @@ export default {
       }, 1000)
     },
     handleTouchEnd (e) {
-
       this.touchStatus = false
       let diff = e.changedTouches[0].pageY - this.startY
-      const startY = document.getElementById('ID2')?document.getElementById('ID2').scrollTop:''
-
       if(diff < 0  && this.dataList.length){
         this.getList()
-      }
-    },
-    handleTouchMove (e) {
-
-      if (this.touchStatus) {
-        const startY = document.getElementById('ID1').offsetTop
-        const touchY = e.touches[0].clientY
       }
     },
     handleTouchStart (e) {
@@ -393,17 +379,17 @@ export default {
       .rules-btn
         position: absolute
         top: 2.9vw
-        right: 0
-        width: 15vw
+        right: -1vw
+        width: 16vw
         height: 5vw
         background: rgba(174, 95, 46, 1);
-        border: 0.03rem solid #F6A264;
-        border-radius: 0.14rem 0rem 0rem 0.14rem;
-        line-height: 0.3rem;
+        border: 0.5vw solid #F6A264;
+        border-radius: 2vw 0rem 0rem 2vw;
+        line-height: 3vw;
         color: #FFFFFF;
-        font-size: 0.18rem;
+        font-size: 2vw;
         font-family: Arial Rounded MT Bold;
-        font-weight: 00;         
+        font-weight: Bold;         
   .body-wrapper
     height: 405vw
     background-color: #FFC415
@@ -431,59 +417,59 @@ export default {
         height: 71vw
         .daily
           position: absolute
-          width: 1.5rem
+          width: 22vw
           top: 23vw
           left: 8vw
         .daily-info1
+          letter-spacing: 0.3vw
+          line-height: 4vw
           position: absolute
           font-size: 3vw;
           font-family: Arial Rounded MT Bold;
-          font-weight: 400;
+          font-weight: Bold;
           top: 19vw
           left: 40vw
           text-align: center
         .daily-money
           position: absolute
-          font-size: 8vw;
+          font-size: 7vw;
           font-family: Arial Rounded MT Bold
           font-weight: bold
-          top: 26vw
-          left: 40vw
+          top: 28vw
+          left: 45vw
           text-align: center
           color: #F66E00
         .daily-info2
           position: absolute     
-          font-size: 0.1vw;
+          font-size: 2.5vw;
           font-family: HelveticaNeue;
-          font-weight: 400;
           top: 37vw
           left: 40vw
           text-align: center
           color: #565656;
         .daily-info3
           position: absolute     
-          font-size: 0.1vw;
+          font-size: 2.5vw;
           font-family: HelveticaNeue;
-          font-weight: 400;
           top: 37vw
           left: 65vw
           text-align: center
           color: #565656;
         .daily-total
           position: absolute     
-          font-size: 4vw;
+          font-size: 3vw;
           font-family: Arial Rounded MT Bold
-          font-weight: 400;
-          top: 44vw
+          font-weight: Bold;
+          top: 44.5vw
           left: 40vw
           text-align: center
           color: #F66E00
         .user-num
           position: absolute     
-          font-size: 4vw;
+          font-size: 3vw;
           font-family: Arial Rounded MT Bold
-          font-weight: 400;
-          top: 44vw
+          font-weight: Bold;
+          top: 44.5vw
           left: 67vw
           text-align: center
           color: #F66E00
@@ -542,6 +528,7 @@ export default {
         width: 90.5vw
         height: 25vw
         .wisdom-wrapper
+          width: 14vw
           float: left
           height: 16vw
           padding: 3vw 2vw
@@ -550,10 +537,11 @@ export default {
           .wisdom
             font-size: 3.5vw;
             font-family: Arial Rounded MT Bold;
-            font-weight: 400;
+            font-weight: Bold;
             color: #565656;
             line-height: 3vw;
         .wisdom-btn
+          font-size: 3.8vw;
           color: #fff
           width: 45vw;
           height: 8vw;
@@ -564,17 +552,17 @@ export default {
           left: 22vw
           bottom: -10vw
       .daily-dividend
-        margin: 0 0.18rem
+        margin: 0 auto
         height: 52vw
       .my-luckey-fish
-        margin: 0.28rem 0.18rem 0 0.18rem
+        margin: 4vw auto 0
         height: 35vw
       .my-fortune-fish
-        margin: 0.28rem 0.18rem 0 0.18rem
+        margin: 4vw auto 0
         height: 48vw
       .how-to-get
         position: relative
-        margin: 0.28rem 0.18rem 0 0.18rem
+        margin: 4vw auto 0
         height: 125vw
         .how-to-get-img
           left: 7vw
@@ -641,9 +629,10 @@ export default {
           width: 90.5vw
           height: 25vw
           .wisdom-wrapper
+            width: 14vw
             float: left
             height: 12vw
-            padding: 3vw 3vw
+            padding: 3vw 2vw
             .wisdom-img
               height: 100%
               margin: 0 auto
@@ -651,7 +640,7 @@ export default {
               margin-left: -1vw
               font-size: 3.5vw;
               font-family: Arial Rounded MT Bold;
-              font-weight: 400;
+              font-weight: Bold;
               color: #565656;
               line-height: 3vw;
           .how-info1
@@ -677,32 +666,32 @@ export default {
             font-weight: bold
             color: #565656;
       .list
-        margin: 0.28rem 0.18rem 0 0.18rem
+        margin: 4vw auto 0
         height: 127vw
         .list-title
           position: absolute
           top: 4.5vw
-          left: 40vw
+          left: 37vw
           width: 100%
-          font-size: 2vw
+          font-size: 3.5vw
           font-family: Arial Rounded MT Bold
           font-weight: bold
           color: #343434
           line-height: 4vw
           .dot1
-            margin-bottom: 0.3vw
+            margin-bottom: 0.5vw
             margin-right: 1vw
             display: inline-block
-            width: 1vw
-            height: 1vw
+            width: 1.5vw
+            height: 1.5vw
             background: #FFA84A
-            border-radius: 30%
+            border-radius: 50%
           .dot2
-            margin-bottom: 0.3vw
-            margin-left: 1vw
+            margin-bottom: 0.5vw
+            margin-left: 2vw
             display: inline-block
-            width: 1vw
-            height: 1vw
+            width: 1.5vw
+            height: 1.5vw
             background: #FFA84A
             border-radius: 50%
         .table-header
@@ -743,7 +732,7 @@ export default {
               display: inline-block
               width: 22.5vw
               height: 10vw;
-              font-size: 0.5vw;
+              font-size: 2.5vw;
               font-family: Arial Rounded MT Bold;
               font-weight: Bold
               color: #565656;
@@ -753,7 +742,7 @@ export default {
           top: 4.5vw
           right: 2.5vw
           position: absolute
-          font-size: 1vw;
+          font-size: 3vw;
           font-family: Arial Rounded MT Bold;
           font-weight: bold
           color: #E37137;
@@ -763,7 +752,7 @@ export default {
         left: 0.435rem
         width: 100%
         height: 0.23rem
-        font-size: 0.25rem
+        font-size: 3.5vw
         font-family: Arial Rounded MT Bold
         font-weight: bold
         color: #343434
@@ -774,7 +763,7 @@ export default {
         left: 0.435rem
         width: 100%
         height: 0.23rem
-        font-size: 0.25rem
+        font-size: 3.5vw
         font-family: Arial Rounded MT Bold
         font-weight: bold
         color: #343434
@@ -785,7 +774,7 @@ export default {
         left: 0.435rem
         width: 100%
         height: 0.23rem
-        font-size: 0.25rem
+        font-size: 3.5vw
         font-family: Arial Rounded MT Bold
         font-weight: bold
         color: #343434
@@ -796,7 +785,7 @@ export default {
         left: 85vw
         width: 100%
         height: 0.23rem
-        font-size: 0.25rem
+        font-size: 3.5vw
         font-family: Arial Rounded MT Bold
         font-weight: bold
         color: #343434
