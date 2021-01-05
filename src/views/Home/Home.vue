@@ -72,12 +72,12 @@
             <div class="wisdom-wrapper">
               <img src="../../assets/img/wisdom1.png" class="wisdom-img"/>
               <br/>
-              <span class="wisdom">Agility</span>
+              <span class="wisdom">&nbsp;&nbsp;Agility</span>
             </div>
             <div class="wisdom-wrapper">
               <img src="../../assets/img/wisdom2.png" class="wisdom-img"/>
               <br/>
-              <span class="wisdom">Talent</span>
+              <span class="wisdom">&nbsp;&nbsp;Talent</span>
             </div>
             <div class="wisdom-wrapper">
               <img src="../../assets/img/wisdom3.png" class="wisdom-img"/>
@@ -536,8 +536,8 @@ export default {
           .wisdom-img
             height: 100%
           .wisdom
-            margin-left: -1vw
-            font-size: 3.5vw;
+            margin-left: 0vw
+            font-size: 3vw;
             font-family: Arial Rounded MT Bold;
             font-weight: Bold;
             color: #565656;
@@ -647,15 +647,15 @@ export default {
             text-align: center
             float: left
             height: 14vw
-            padding: 4.5vw 2vw
+            padding: 4.5vw 0 0 4vw
             .wisdom-img
               height: 100%
             .wisdom
-              font-size: 2.5vw;
+              font-size: 3vw;
               font-family: Arial Rounded MT Bold;
               font-weight: Bold;
               color: #565656;
-              line-height: 2.5vw;
+              line-height: 3vw;
           .how-info1
             margin: 1vw auto
             width: 87vw
