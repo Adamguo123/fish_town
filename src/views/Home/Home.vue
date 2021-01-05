@@ -2,8 +2,8 @@
   <div>
     <div class="header-wrapper">
       <div class="header">
-        <img  class="back-btn" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA/UExURUdwTPr7//n6//n8//j5//b7//n6//j6//z8//r6//r7//r7//n7//j+//f///////////n7//z9//v8//j6/yQP2FkAAAAQdFJOUwCMVDnWGcf4E+eybaAiCgYd2rI6AAABY0lEQVRYw+2W25aDIAxFFSmgoi2Q///WkoDa8QZT+sjxza5sQi7HNk1VVVVSij+K4pmEEsBzACgBdD0UAVoJJYCJA5QARgklACV8pCGB+qZ5WD3jUMao75pnfLz1co4LMeix+2fzYjgRDBj/RvJ2ym5eOP6FIoKJ9eQsr3lLuPUPEZxZGLzLaF6MDxkgwbqNIXWqeRT/WmUDIuaBv4v5EsC3+B0iQCKivyTMA9XPfkRHhF3vggR+N0GHBHZ3oSRu6qCGYwY2phAQSJDsthHOXmYQCL4Mt6MgMAd7SGBtCBLGxDCut/CxvZeMc71WkifWgdvtXNrGeWLt0G/bAYmJfOptFz7WucPcwjjotCUs2/jHD1Qraa5Td6CGRj/YGcpDUAZyzrFFOuzgSJr2iuUYszj3xBF3Rme7y4krI0Fk+9uZrbeQUcVlQ0+/C+J+mjM+HL0s/N/ASgGNKAVMTVVVVdXv9QZ5USpB3dZraQAAAABJRU5ErkJggg==">
-        <button type="button" class="rules-btn" @click="showDialog">RULES</button>
+        <div class="dot3"></div>
+        <button type="button" class="rules-btn" @click="showDialog"></button>
       </div>
     </div>
 
@@ -111,7 +111,7 @@
             <div class="how-fish">
               <img src="../../assets/img/how-fish.png" class="how-fish-img"/>
               <br/>
-              <span class="how-fish-lv">lv.50</span>
+              <span class="how-fish-lv">Lv.50</span>
             </div>
             <div class="how-fish-add">
               +
@@ -119,7 +119,7 @@
             <div class="how-fish">
               <img src="../../assets/img/how-fish.png" class="how-fish-img"/>
               <br/>
-              <span class="how-fish-lv">lv.50</span>
+              <span class="how-fish-lv">Lv.50</span>
             </div>
             <div class="how-fish-add">
               =
@@ -177,7 +177,7 @@
             <div class="dot1"></div> Lucky Fish<div class="dot2"></div>
           </div>
           <div class="more">
-            more&nbsp;>
+            More&nbsp;>
           </div>
           <div class="table-header">
             <div class="header-item">
@@ -202,16 +202,16 @@
               @touchstart="handleTouchStart"
               @touchEnd="handleTouchEnd"
             >
-              <div class="body-item">
+              <div class="body-item" style="width: 24.5vw">
                 {{item.userId}}
               </div>
-              <div class="body-item">
+              <div class="body-item" style="width: 20.5vw">
                 {{item.amount}}
               </div>
-              <div class="body-item">
+              <div class="body-item" style="width: 20.5vw">
                 {{item.time?item.time.split(' ')[0]:''}}
               </div>
-              <div class="body-item">
+              <div class="body-item" style="width: 22.5vw">
                 {{item.share}}
               </div>
             </div>
@@ -374,19 +374,25 @@ export default {
       background-size:100% 100%
       z-index: 1
       opacity: 0.9
-      .back-btn
+      .dot3
         position: absolute
-        left: 2.4vw
+        left: 3vw
         top: 3vw
-        width: 8vw
+        width: 13vw
+        display: inline-block
+        width: 7vw
+        height: 7vw
+        background: RGBA(212, 121, 62, 0)
+        border-style: none
+        z-index: 2
       .rules-btn
         position: absolute
         top: 3.9vw
         right: -0.3vw
         width: 16vw
         height: 6vw
-        background: rgba(174, 95, 46, 1);
-        border: 0.5vw solid #F6A264;
+        background: rgba(174, 95, 46, 0);
+        border: none
         border-radius: 2vw 0rem 0rem 2vw;
         line-height: 3vw;
         color: #FFFFFF;
@@ -690,7 +696,7 @@ export default {
         .list-title
           position: absolute
           top: 4.5vw
-          left: 37vw
+          left: 35vw
           width: 100%
           font-size: 3.5vw
           font-family: Arial Rounded MT Bold
@@ -743,6 +749,7 @@ export default {
           background: #FFFFFF;
           overflow: auto
           .table-body
+            padding-left: 4vw
             width: 90vw
             height: 9.8vw
             background: #FFF
@@ -767,7 +774,7 @@ export default {
           color: #E37137;
       .title
         position: absolute
-        top: 4.5vw
+        top: 6vw
         left: 5vw
         width: 100%
         height: 0.23rem
