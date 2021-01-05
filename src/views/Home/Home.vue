@@ -21,7 +21,8 @@
             <span class="daily-info3">Number <br/>of users</span>
             <span class="daily-total">$12289.00</span>
             <span class="user-num">100</span>
-            <button type="button" class="daily-btn">Get</button>
+            <img class="short-btn" src="../../assets/img/short-btn.png"/>
+            <span class="short-btn-text">Get</span>
           </div>
           
           <img class="bottom-left" src="../../assets/img/small-circle.png"/>
@@ -95,7 +96,8 @@
               <span class="wisdom">Diligence</span>
             </div>
 
-            <button type="button" class="wisdom-btn">Merge Fortune Fish</button>
+            <img class="long-btn" src="../../assets/img/long-btn.png"/>
+            <div class="long-btn-text-wrapper"><span class="long-btn-text">Merge Fortune Fish</span></div>
           </div>
 
         </div>
@@ -178,16 +180,16 @@
             more&nbsp;>
           </div>
           <div class="table-header">
-            <div class="header-item" style="width: 30.5vw">
+            <div class="header-item">
               User ID
             </div>
-            <div class="header-item" style="width: 14.5vw">
+            <div class="header-item">
               Amount
             </div>
-            <div class="header-item" style="width: 30.5vw">
+            <div class="header-item">
               Date
             </div>
-            <div class="header-item" style="width: 14.5vw">
+            <div class="header-item">
               Share
             </div>
           </div>
@@ -200,16 +202,16 @@
               @touchstart="handleTouchStart"
               @touchEnd="handleTouchEnd"
             >
-              <div class="body-item" style="width: 30.5vw">
+              <div class="body-item">
                 {{item.userId}}
               </div>
-              <div class="body-item" style="width: 14.5vw">
+              <div class="body-item">
                 {{item.amount}}
               </div>
-              <div class="body-item" style="width: 30.5vw">
+              <div class="body-item">
                 {{item.time?item.time.split(' ')[0]:''}}
               </div>
-              <div class="body-item" style="width: 14.5vw">
+              <div class="body-item">
                 {{item.share}}
               </div>
             </div>
@@ -380,7 +382,7 @@ export default {
       .rules-btn
         position: absolute
         top: 3.9vw
-        right: -1vw
+        right: -0.3vw
         width: 16vw
         height: 6vw
         background: rgba(174, 95, 46, 1);
@@ -474,21 +476,20 @@ export default {
           left: 67vw
           text-align: center
           color: #F66E00
-        .daily-btn
+        .short-btn
+          width: 30vw
           display: inline-block
           position: absolute
           top: 49vw
           left: 31vw
-          width: 30vw
-          height: 7vw
-          background: #5FCD4C     
-          border: 1vw solid #69E25E;
-          box-shadow: 0px 1vw 0px 0.1vw #408B46
-          border-radius: 14px;
+        .short-btn-text
           font-size: 3.8vw;
           font-family: Arial Rounded MT Bold;
-          font-weight: 400;
+          font-weight: Bold;
           color: #FFFFFF;
+          position: absolute
+          top: 52vw
+          left: 42vw
       .my-luckey-bg
         position: relative 
         background-image: url(../../assets/img/myluckey-bg.png)
@@ -542,17 +543,22 @@ export default {
             font-weight: Bold;
             color: #565656;
             line-height: 3vw;
-        .wisdom-btn
-          font-size: 3.8vw;
-          color: #fff
+        .long-btn
           width: 45vw;
-          height: 8vw;
-          background: #5FCD4D;
-          box-shadow: 0px 1vw 0px 0.2vw #408B46
-          border-radius: 2vw;
           position: absolute
           left: 22vw
-          bottom: -10vw
+          bottom: -12.5vw
+        .long-btn-text-wrapper
+          width: 45vw;
+          position: absolute
+          left: 27vw
+          bottom: -8.5vw 
+          padding-left: 50%-22.5vw
+        .long-btn-text
+          font-size: 3.8vw;
+          font-family: Arial Rounded MT Bold;
+          font-weight: Bold;
+          color: #fff
       .daily-dividend
         margin: 0 auto
         height: 52vw
@@ -715,7 +721,7 @@ export default {
           height: 10vw
           background: #F9DB99
           left: 0
-          border: 1px solid #F9DB99;
+          border: 2px solid #F9DB99;
           border-radius: 2vw 2vw 0 0;
           .header-item
             display: inline-block
@@ -728,19 +734,19 @@ export default {
             line-height: 10vw;
             text-align:center
         .list-wrapper
-          border: 1px solid #F9DB99;
+          border: 2px solid #F9DB99;
           margin: 0 auto
           top: 10vw
           position: relative
           width: 90vw
-          height: 105.3vw          
+          height: 100vw          
           background: #FFFFFF;
           overflow: auto
           .table-body
             width: 90vw
-            height: 10vw
+            height: 9.8vw
             background: #FFF
-            border: 1px solid #F9DB99;
+            border-top: 1px solid #F9DB99;
             .body-item
               display: inline-block
               width: 22.5vw
@@ -762,7 +768,7 @@ export default {
       .title
         position: absolute
         top: 4.5vw
-        left: 0.435rem
+        left: 5vw
         width: 100%
         height: 0.23rem
         font-size: 3.5vw
@@ -773,7 +779,7 @@ export default {
       .luckey-title
         position: absolute
         top: 12.5vw
-        left: 0.435rem
+        left: 5vw
         width: 100%
         height: 0.23rem
         font-size: 3.5vw
@@ -784,7 +790,7 @@ export default {
       .fortune-title
         position: absolute
         top: 62vw
-        left: 0.435rem
+        left: 5vw
         width: 100%
         height: 0.23rem
         font-size: 3.5vw
