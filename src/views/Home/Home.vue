@@ -232,8 +232,10 @@
 </template>
 
 <script>
-export default {
-  name: 'Home',
+import { defineComponent } from "vue"
+
+export default defineComponent({
+  name: "Home",
   data () {
     return {
       loading: false,
@@ -315,7 +317,7 @@ export default {
       this.dialog = false
     },
   }
-}
+})
 </script>
 
 <style lang="stylus" scoped>
