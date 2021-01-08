@@ -2,7 +2,7 @@
   <div>
     <div class="header-wrapper">
       <div class="header">
-        <div class="dot3"></div>
+        <div class="dot3" @click="goback"></div> <!-- 返回按钮,函数“goback” -->
         <button type="button" class="rules-btn" @click="showDialog"></button>
       </div>
     </div>
@@ -21,8 +21,8 @@
             <span class="daily-info3">Number <br/>of users</span>
             <span class="daily-total">$12289.00</span>
             <span class="user-num">100</span>
-            <img class="short-btn" src="../../assets/img/short-btn.png"/>
-            <span class="short-btn-text">Get</span>
+            <img class="short-btn" src="../../assets/img/short-btn.png" @click="handleGet"/><!-- Get按钮,函数“handleGet” -->
+            <span class="short-btn-text"  @click="handleGet">Get</span>
           </div>
           
           <img class="bottom-left" src="../../assets/img/small-circle.png"/>
@@ -97,7 +97,7 @@
             </div>
 
             <img class="long-btn" src="../../assets/img/long-btn.png"/>
-            <div class="long-btn-text-wrapper"><span class="long-btn-text">Merge Fortune Fish</span></div>
+            <div class="long-btn-text-wrapper"><span class="long-btn-text" @click="handleMerge">Merge Fortune Fish</span></div> <!-- Merge 按钮,函数“handleMerge” -->
           </div>
 
         </div>
@@ -223,6 +223,9 @@
     <div v-show="dialog" class='popContainer'>
       <div class="img">
         <img class="close-img" src="../../assets/img/close.png" alt="" @click="hideDialog">
+        <div class="dialog-content">
+          <div class="dialog-txt">Rules 内容</div> <!--  Rules 内容 -->
+        </div>
       </div>
     </div>
     <div v-show="loading" class='popContainer' style="background-color: rgba(0, 0, 0, 0.5);">
@@ -251,6 +254,18 @@ export default defineComponent({
     this.getJson()
   },
   methods: {
+    //Merge 按钮点击函数
+    handleMerge() {
+      console.log('Merge')
+    },
+    //Get 按钮点击函数
+    handleGet() {
+      console.log('Get')
+    },
+    //返回按钮点击函数
+    goback() {
+      console.log('goback')
+    },
     getJson() {
       this.loading = true
       let data = JSON.parse(localStorage.getItem("data"))
@@ -354,6 +369,16 @@ export default defineComponent({
       width: 90%;
       height: 100%;
       object-fit: contain
+      .dialog-content
+        background-color: #fff
+        z-index: 11
+        width: 86%
+        height: 43%
+        margin-left: 6vw
+        margin-top: 5vw
+        .dialog-txt
+          padding: 5vw
+          font-size: 4vw
       .close-img
         z-index: 11
         cursor: pointer
